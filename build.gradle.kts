@@ -5,7 +5,7 @@ plugins {
 }
 
 submit {
-    assignmentId = "h_id_" // do not change assignmentId
+    assignmentId = "h05" // do not change assignmentId
     studentId = null // TU-ID  z.B. "ab12cdef"
     firstName = null
     lastName = null
@@ -37,7 +37,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("h_id_.Main")
+    mainClass.set("h05.Main")
 }
 
 tasks {
