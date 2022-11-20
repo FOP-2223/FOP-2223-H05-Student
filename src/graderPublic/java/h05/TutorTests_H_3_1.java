@@ -108,7 +108,7 @@ public class TutorTests_H_3_1 {
             .build();
         assertEquals(filling_level_before - reduceBy, actual_filling_level_after, context, result ->
             "Method letMeMove does not reduce fillingLevel by the correct amount");
-        assertEquals(reduceBy / 10, returned_value, context, result ->
+        assertEquals(reduceBy * 10, returned_value, context, result ->
             "Return value of letMeMove is incorrect");
     }
 
