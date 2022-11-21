@@ -226,7 +226,7 @@ public class H05_RubricProvider implements RubricProvider {
             + "(bis auf [[[getPreferredDriveType]]]) sind erkennbar korrekt umgesetzt.");
 
     public static final Criterion H3_4_T3 = makeUngradedCriterion(
-        "Die Methode [[[getPreferredDriveType]]] ist in [[[HybridType3]]] korrekt unter Nutzung des Bedingungsoperators realisiert.");
+        "Die Methode [[[togglePreferredDriveType]]] ist in [[[HybridType3]]] korrekt unter Nutzung des Bedingungsoperators realisiert.");
 
     public static final Criterion H3_4 = Criterion.builder()
         .shortDescription(CODE_TAGIFY.apply("H3.4 | [[[HybridVehicle]]] implementieren"))
