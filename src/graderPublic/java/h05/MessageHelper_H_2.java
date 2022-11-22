@@ -12,7 +12,7 @@ public class MessageHelper_H_2 {
 
     private static String toNoun(String s) {
         String[] splits = s.split("", 2);
-        return "%s%s".formatted(splits[0].toUpperCase(), splits[0].toLowerCase());
+        return "%s%s".formatted(splits[0].toUpperCase(), splits[1].toLowerCase());
     }
 
     public static String expectedName(String name) {

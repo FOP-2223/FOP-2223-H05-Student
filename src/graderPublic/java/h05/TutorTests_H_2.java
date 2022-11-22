@@ -13,6 +13,7 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.function.Function;
 
 import static org.tudalgo.algoutils.tutor.general.assertions.Assertions2.*;
 
@@ -55,12 +56,27 @@ public class TutorTests_H_2 {
         Object obj = H05_Tester.MEANS_OF_TRANSPORT_CT.get().resolve().getNewRealInstance();
         ClassTester.setField(obj, transport_type_field, instance);
 
+        String expected = MessageHelper_H_2.expectedName(input);
         Context context = contextBuilder().add("transportType", input).build();
         Assertions2.<String>testOfObjectBuilder()
-            .expected(ExpectedObject.of(MessageHelper_H_2.expectedName(input), MessageHelper_H_2::matchesFormat))
+            .expected(ExpectedObject.of(expected, MessageHelper_H_2::matchesFormat, Function.identity()))
             .build()
             .run(() -> (String) H05_Tester.MEANS_OF_TRANSPORT_TO_STRING_MT.get().resolveMethod().invoke(obj))
-            .check(context, null);
+            .check(context, result -> "Expected and actual string differ at index " + getDifferenceIndex(expected, result.object()));
+    }
+
+    private int getDifferenceIndex(String expected, String actual) {
+        if (actual == null) {
+            return 0;
+        }
+
+        int i = 0;
+        for (; i < expected.length(); i++) {
+            if (i > actual.length() - 1 || actual.charAt(i) != expected.charAt(i)) {
+                break;
+            }
+        }
+        return i;
     }
 
     @ParameterizedTest
