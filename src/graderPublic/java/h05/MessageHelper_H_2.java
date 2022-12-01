@@ -7,7 +7,7 @@ public class MessageHelper_H_2 {
     }
 
     public static boolean matchesFormat(String s) {
-        return s.matches("^I am (an [AEIOU]|a [BCDFGHJKLMNPQRSTVWXYZ])[a-z0-9 ]*\\.$");
+        return s.matches("^I am (an [AEIOU]|a [BCDFGHJKLMNPQRSTVWXYZ0-9])[a-z0-9 ]*\\.$");
     }
 
     private static String toNoun(String s) {
